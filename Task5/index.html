@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        background: linear-gradient(135deg, #add8e6, #87cefa);
+        padding: 0;
+        margin: 0;
+      }
+      .ctr {
+        border: 2px solid black;
+        border-radius: 10px;
+        background-color: white;
+        width: 25rem;
+        height: 15rem;
+        text-align: center;
+        margin-left: 35rem;
+        margin-top: 15rem;
+      }
+      input {
+        padding: 5px;
+        border-radius: 5px;
+        width: 15rem;
+        margin-top: 15px;
+      }
+      button {
+        background-color: #87cefa;
+        border: none;
+        border-radius: 5px;
+        padding: 3.5px;
+        margin-top: 25px;
+      }
+      button:hover {
+        background-color: #add8e6;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="ctr">
+      <h1>🗣️ Text to Voice</h1>
+      <input type="text" placeholder="enter your text" id="text" />
+      <br />
+      <button onclick="speak()">Speak</button>
+    </div>
+
+    <script>
+      function speak() {
+        const input = document.getElementById("text").value;
+        const utterance = new SpeechSynthesisUtterance(input);
+        speechSynthesis.speak(utterance);
+      }
+    </script>
+  </body>
+</html>
